@@ -18,9 +18,9 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: |
-          echo @isoteriksoftware:https://npm.pkg.github.com/ > build/.npmrc
+          echo @isoteriksoftware:https://npm.pkg.github.com/isoteriksoftware > build/.npmrc
           echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
       - run: npm publish
         working-directory: ./build
         env:
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.TOKEN }}
